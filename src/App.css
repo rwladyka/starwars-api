@@ -1,0 +1,12 @@
+.App {
+    width: 100%;
+    background: #000;
+    padding: 16px;
+}
+
+label {
+    display: block;
+    color: #ffe800;
+    margin-bottom: 8px;
+    margin-left:4px;
+}
