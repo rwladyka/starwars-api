@@ -8,3 +8,33 @@
     color: #1A1A1A;
     border: none;
 }
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-options {
+    position: absolute;
+    display: block;
+    margin-top: 2px;
+    visibility: visible;
+    color: #1A1A1A;
+    border: none;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 5%), 0 0 0 1px rgb(0 0 0 / 7%);
+    cursor: pointer;
+    border-radius: 2px;
+    max-height: 140px;
+    overflow: auto;
+}
+
+.search-options > div {
+    padding: 8px 4px;
+}
+
+.search-options > div:hover {
+    border-radius: 2px;
+    background-color: #000;
+    color: #ffe800;
+}
