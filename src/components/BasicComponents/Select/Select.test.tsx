@@ -17,6 +17,7 @@ describe('<Select />', () => {
         label="Search type"
         options={mockOptions}
         firstOptionLabel="Choose one"
+        onChange={jest.fn}
       />,
     )
     expect(screen.getByText(/Choose one/i)).toBeInTheDocument()
@@ -28,6 +29,7 @@ describe('<Select />', () => {
         label="Search type"
         options={mockOptions}
         firstOptionLabel="Choose one"
+        onChange={jest.fn}
       />,
     )
     const select = screen.getByTestId('select-box')
@@ -47,6 +49,7 @@ describe('<Select />', () => {
         label="Search type"
         options={mockOptions}
         firstOptionLabel="Choose one"
+        onChange={jest.fn}
       />,
     )
     const select = screen.getByTestId('select-box')

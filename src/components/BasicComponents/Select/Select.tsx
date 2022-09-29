@@ -11,6 +11,7 @@ type Option = {
 type SelectProps = {
   label: string
   options: Option[]
+  onChange: (value: string) => void
   firstOptionLabel?: string
   style?: CSSProperties
 }
@@ -20,12 +21,13 @@ const Select = ({
   options,
   firstOptionLabel = '',
   style,
+  onChange,
 }: SelectProps) => {
   const [selected, setSelected] = useState<Option>()
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="select" style={style}>
+    <div className="select select-none" style={style}>
       <label>{label}</label>
       <OutsideClick onClickOutside={() => setIsOpen(false)}>
         <>
@@ -45,6 +47,7 @@ const Select = ({
                   key={option.value}
                   onClick={() => {
                     setSelected(option)
+                    onChange(option.value)
                     setIsOpen(false)
                   }}>
                   {option.label}
