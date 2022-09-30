@@ -46,6 +46,7 @@
     border-radius: 2px;
     max-height: 140px;
     overflow: auto;
+    z-index: 9;
 }
 
 .select-options > div {

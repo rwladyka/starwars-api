@@ -1,5 +1,6 @@
 import SearchInput from 'components/BasicComponents/SearchInput'
 import Select from 'components/BasicComponents/Select/Select'
+import { useIsMobile } from 'hooks/useIsMobile'
 import { useEffect, useState } from 'react'
 import { search } from 'services/api'
 import ResultsView from './ResultsView'
@@ -27,6 +28,7 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [value, setValue] = useState('')
   const [selected, setSelected] = useState<Result>()
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     clearTimeout(timeout)
@@ -52,7 +54,12 @@ const Search = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: '24px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? '12px' : '24px',
+      }}>
       <SearchInput
         value={value}
         onChange={(value) => {
@@ -73,7 +80,7 @@ const Search = () => {
           setType(value)
           setResult(undefined)
         }}
-        style={{ width: '300px' }}
+        style={{ width: isMobile ? '100%' : '300px' }}
         label="Search type"
         options={[
           { value: 'people', label: 'People' },

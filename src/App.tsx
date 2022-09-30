@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Container
         style={{
-          width: '800px',
+          width: '100%',
         }}>
         <Search />
       </Container>
